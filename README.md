@@ -15,6 +15,32 @@ This is deliberately a decision system, not only a notebook: immutable official-
 - **Station identity is treated as data engineering:** exact ID, unique normalized name with a distance guard, then a 150 m coordinate fallback.
 - **Two-stage release gate:** forecast promotion requires ≥2% mean validation improvement and majority fold wins; decision release additionally requires Pareto improvement over the baseline replay.
 
+## Operator console
+
+### Command center
+
+Live network pressure, freshness, uncertainty, and station-level evidence share one decision surface.
+
+![VeloGuard command center showing network KPIs, the WebGL risk map, and station evidence](docs/screenshots/command-center.png)
+
+### Network topology
+
+Identity resolution and capacity-normalized inventory expose coverage gaps before they become model errors.
+
+![VeloGuard network topology showing identity coverage and the station lattice](docs/screenshots/network-topology.png)
+
+### Dispatch simulation
+
+Every proposed move remains visibly shadow-only and is accompanied by its hard capacity, distance, and budget invariants.
+
+![VeloGuard dispatch simulation showing transfer legs and the constraint ledger](docs/screenshots/dispatch-simulation.png)
+
+### Model governance
+
+Forecast promotion and operational dominance are separate gates, with frozen-test evidence and the Pareto verdict kept visible.
+
+![VeloGuard model governance showing release gates, forecast evidence, and decision replay](docs/screenshots/model-governance.png)
+
 ## Verified result
 
 One reproducible run used the complete January 2024 Citi Bike trip archive and the 40 busiest stations selected only from the first 60% of the month.
