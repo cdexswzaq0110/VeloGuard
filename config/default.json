@@ -1,0 +1,43 @@
+{
+  "project_name": "veloguard",
+  "paths": {
+    "raw_dir": "data/raw",
+    "processed_flow": "data/processed/station_flow.parquet",
+    "artifact": "artifacts/model.joblib",
+    "report": "artifacts/report.json",
+    "database": "data/veloguard.sqlite3"
+  },
+  "data": {
+    "months": ["2024-01"],
+    "url_template": "https://s3.amazonaws.com/tripdata/{yyyymm}-citibike-tripdata.zip",
+    "bucket_minutes": 15,
+    "horizon_minutes": 30,
+    "max_stations": 40,
+    "selection_fraction": 0.6,
+    "csv_chunk_rows": 250000
+  },
+  "training": {
+    "test_days": 5,
+    "validation_days": 3,
+    "max_folds": 3,
+    "min_relative_improvement": 0.02,
+    "coverage": 0.9,
+    "random_seed": 42
+  },
+  "live": {
+    "discovery_url": "https://gbfs.citibikenyc.com/gbfs/2.3/gbfs.json",
+    "max_feed_age_seconds": 600,
+    "request_timeout_seconds": 20
+  },
+  "planner": {
+    "safety_bikes": 2,
+    "safety_docks": 2,
+    "target_fill_ratio": 0.5,
+    "max_total_moves": 40,
+    "max_route_km": 4.0
+  },
+  "simulation": {
+    "station_capacity": 30,
+    "planning_interval_minutes": 30
+  }
+}

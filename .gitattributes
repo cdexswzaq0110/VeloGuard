@@ -1,0 +1,2 @@
+# Minified production bundles may contain vendor-authored whitespace.
+web/assets/** -whitespace
