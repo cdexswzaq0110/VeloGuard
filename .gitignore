@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+.coverage
+data/raw/
+data/processed/
+data/*.sqlite3*
+artifacts/
+frontend/node_modules/
+
+# Private interview materials are never published.
+docs/interview-guide.md
+interview/
+interview-materials/
+*.docx

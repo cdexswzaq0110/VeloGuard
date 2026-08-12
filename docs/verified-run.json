@@ -1,0 +1,63 @@
+{
+  "scope": "One verified local run; not a production benchmark or causal impact estimate.",
+  "source": {
+    "dataset": "Official Citi Bike January 2024 trip archive",
+    "valid_trip_rows": 1881977,
+    "aggregated_rows": 120680,
+    "supervised_rows": 120600,
+    "stations": 40,
+    "bucket_minutes": 15,
+    "horizon_minutes": 30,
+    "target_definition": "next-exclusive-buckets-v1"
+  },
+  "model": {
+    "model_version": "f19de84ec919",
+    "forecast_champion": "candidate",
+    "release_status": "shadow_mode_only",
+    "rolling_fold_wins": "3/3",
+    "mean_rolling_relative_improvement": 0.1057326012890701,
+    "frozen_test_rows": 19120,
+    "frozen_combined_mae": 1.8231461968924252,
+    "baseline_combined_mae": 1.9232740585774057,
+    "candidate_relative_improvement": 0.05206115126361266,
+    "top_10pct_imbalance_recall": 0.40115062761506276,
+    "departure_interval_coverage": 0.8872384937238493,
+    "arrival_interval_coverage": 0.8769874476987448,
+    "interval_coverage_target": 0.9
+  },
+  "decision_replay": {
+    "no_action_service_failures": 4280,
+    "baseline": {
+      "service_failures": 1557,
+      "relative_failure_reduction": 0.6362149532710281,
+      "bikes_moved": 3467,
+      "bike_km": 6578.547
+    },
+    "candidate": {
+      "service_failures": 1652,
+      "relative_failure_reduction": 0.6140186915887851,
+      "bikes_moved": 3268,
+      "bike_km": 6103.975
+    },
+    "candidate_dominates_baseline": false
+  },
+  "live_check": {
+    "system_stations": 2509,
+    "aligned_model_stations": 39,
+    "alignment_methods": {
+      "normalized_name": 32,
+      "coordinate": 7
+    }
+  },
+  "local_performance_check": {
+    "risk_api_cold_ms": 3067.9,
+    "risk_api_warm_p95_ms": 21.4,
+    "warm_requests": 20
+  },
+  "verification": {
+    "pytest": "4 passed in 10.24s",
+    "compileall": "passed",
+    "pip_check": "no broken requirements",
+    "browser": "desktop and 390px responsive layouts, live collection, risk refresh, plan dialog, no console warnings/errors"
+  }
+}
