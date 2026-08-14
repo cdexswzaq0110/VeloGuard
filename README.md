@@ -233,5 +233,3 @@ veloguard/
 - Weather, events, traffic, truck capacity, route time, and operator feedback are not modeled.
 - SQLite is appropriate for a single-node MVP; a production multi-worker deployment needs a shared transactional store.
 - There is no authentication or write-rate limiting; deploy only behind an authenticated gateway.
-
-These limits are explicit so the system can be defended honestly in an interview and evolved based on measured need.
